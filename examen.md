@@ -30,7 +30,7 @@ javier@ASUS-TUF:~$ ls /bin | grep -E "^[aeiou]{2}*"
 **4.-** Estando en tu directorio personal, muestra por pantalla la quinta línea del fichero `/etc/passwd`.
 
 ```bash
-
+tail -n 5 /etc/passwd
 ```
 
 **5.-** Sabemos que el fichero `/usr/share/dict/spanish` contiene un listado de palabras en castellano. Calcula el número de palabras de este fichero que tienen un número impar de letras. Por tanto, la salida del comando deberá ser un único número.
