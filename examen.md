@@ -11,31 +11,31 @@ La entrega de este examen ser realizará utilizando [Github](https://github.com/
 
 **1.-** Desde tu directorio personal, crea un fichero en `/tmp` llamado `ev3ex1.txt` que contenga tu nombre utilizando una única orden (por supuesto sin utilizar ningún editor).
 
-```
-
+```bash
+javier@ASUS-TUF:~$ echo "Javier Calleja" > /tmp/ev3ex1.txt
 ```
 
 **2.-** Muestra por pantalla el número de ficheros que tiene el directorio `/bin` (es decir, la salida tiene que ser únicamente un número).
 
-```
-
+```bash
+javier@ASUS-TUF:~$ ls /bin | wc -l
 ```
 
 **3.-** Muestra por pantalla todos los archivos del directorio `/bin` que tengan por lo menos dos vocales en su nombre, suponiendo que te encuentras en tu directorio personal.
 
-```
-
+```bash
+javier@ASUS-TUF:~$ ls /bin | grep -E "^[aeiou]{2}*"
 ```
 
 **4.-** Estando en tu directorio personal, muestra por pantalla la quinta línea del fichero `/etc/passwd`.
 
-```
+```bash
 
 ```
 
 **5.-** Sabemos que el fichero `/usr/share/dict/spanish` contiene un listado de palabras en castellano. Calcula el número de palabras de este fichero que tienen un número impar de letras. Por tanto, la salida del comando deberá ser un único número.
 
-```
+```bash
 
 ```
 
@@ -43,7 +43,7 @@ La entrega de este examen ser realizará utilizando [Github](https://github.com/
 
 **a)** Un NIF. Ejemplos: 2345678f, 71.555.333N, 10.333.222-T, …
 
-```
+```bash
 
 ```
 
@@ -92,8 +92,9 @@ Indica qué órdenes deberías introducir para automatizar la extracción de dat
 ```
 Observa que hay información del fichero CSV que se descarta (mail y localidad). Por otro lado, obviaremos las etiquetas de apertura y cierre del documento XML por claridad, limitándote a generar el código XML indicado.
 
-```
-
+```bash
+cat archivo.csv | sed -e 's/,//' -e 's/, .*@.*.com//' -E -e 's/^(.*),(.*),(.*)/<usua
+rio>\n\t<nombre> \1<\/nombre>\n\t<telefono>\2<\/telefono>\n<\/usuario>/'
 ```
 
 
